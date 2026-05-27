@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Swipecord</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- macOS-style Titlebar -->
+  <div class="titlebar" id="titlebar">
+    <div class="traffic-lights">
+      <button class="tl-btn tl-close" id="btn-close" title="Kapat"></button>
+      <button class="tl-btn tl-minimize" id="btn-minimize" title="Küçült"></button>
+      <button class="tl-btn tl-maximize" id="btn-maximize" title="Büyüt"></button>
+    </div>
+    <div class="titlebar-title">Swipecord</div>
+    <div class="titlebar-spacer"></div>
+  </div>
+
+  <!-- Frosted background -->
+  <div class="bg-mesh">
+    <div class="mesh-blob mesh-1"></div>
+    <div class="mesh-blob mesh-2"></div>
+    <div class="mesh-blob mesh-3"></div>
+  </div>
+
+  <!-- LOGIN SCREEN -->
+  <div class="screen screen-login active" id="screen-login">
+    <div class="login-container">
+      <div class="login-brand">
+        <div class="brand-icon-wrap">
+          <svg class="brand-icon" width="52" height="52" viewBox="0 0 71 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.3052 54.5139 18.3604 54.4378C19.7031 52.5728 20.9461 50.6063 22.0633 48.5383C22.1157 48.4399 22.0661 48.3227 21.9635 48.2842C20.0285 47.5709 18.1793 46.6975 16.4014 45.7005C16.2877 45.6337 16.2765 45.4727 16.3789 45.3933C16.7563 45.1098 17.1338 44.8151 17.4946 44.5176C17.5522 44.4691 17.6307 44.4593 17.6979 44.4904C29.7674 50.0174 42.8444 50.0174 54.7781 44.4904C54.8453 44.4565 54.9237 44.4663 54.9842 44.5148C55.345 44.8123 55.7225 45.1098 56.1027 45.3933C56.2051 45.4727 56.1967 45.6337 56.083 45.7005C54.3051 46.7171 52.4559 47.5709 50.518 48.2814C50.4154 48.3199 50.3687 48.4399 50.4211 48.5383C51.5606 50.6035 52.8036 52.57 54.1539 54.435C54.2079 54.5139 54.3088 54.5477 54.4012 54.5195C60.2038 52.7249 66.0865 50.0174 72.1594 45.5576C72.2126 45.5182 72.2462 45.459 72.2518 45.3942C73.7295 30.0791 69.6806 16.7757 60.1971 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM24.0326 37.3209C20.4935 37.3209 17.5765 34.0752 17.5765 30.1132C17.5765 26.1512 20.4372 22.9055 24.0326 22.9055C27.6562 22.9055 30.5449 26.1796 30.4888 30.1132C30.4888 34.0752 27.628 37.3209 24.0326 37.3209ZM48.0364 37.3209C44.4973 37.3209 41.5802 34.0752 41.5802 30.1132C41.5802 26.1512 44.4409 22.9055 48.0364 22.9055C51.6599 22.9055 54.5487 26.1796 54.4926 30.1132C54.4926 34.0752 51.6599 37.3209 48.0364 37.3209Z" fill="#5865F2"/>
+          </svg>
+        </div>
+        <h1 class="brand-title">Swipecord</h1>
+        <p class="brand-subtitle">Sunucularını swipe'la, hayatını düzenle.</p>
+      </div>
+
+      <div class="login-form">
+        <div class="input-group">
+          <label for="token-input">Discord Token</label>
+          <div class="input-wrapper">
+            <input
+              type="password"
+              id="token-input"
+              placeholder="Token'ını yapıştır..."
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button class="input-eye" id="toggle-token" title="Göster/Gizle">
+              <svg class="eye-open" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              <svg class="eye-closed" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+                <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+                <line x1="1" y1="1" x2="23" y2="23"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <button class="btn-login" id="btn-login">
+          <span class="btn-text">Giriş Yap</span>
+          <span class="btn-loader" style="display:none;">
+            <span class="spinner"></span>
+          </span>
+        </button>
+
+        <p class="login-hint">
+          DevTools (F12) → Network → herhangi bir istek → Authorization header.<br>
+          Sadece lokal kullanım.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN SWIPE SCREEN -->
+  <div class="screen screen-main" id="screen-main">
+    <!-- Top bar -->
+    <div class="topbar" id="user-bar">
+      <div class="topbar-left">
+        <img class="topbar-avatar" id="user-avatar" src="" alt="" />
+        <span class="topbar-name" id="user-name"></span>
+      </div>
+      <div class="topbar-counter">
+        <span class="counter-current" id="current-index">0</span>
+        <span class="counter-sep">/</span>
+        <span class="counter-total" id="total-count">0</span>
+      </div>
+      <button class="topbar-logout" id="btn-logout" title="Çıkış">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Score pills -->
+    <div class="score-bar">
+      <div class="score-pill score-left">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        <span id="stat-left">0</span>
+      </div>
+      <div class="score-pill score-right">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+        <span id="stat-right">0</span>
+      </div>
+    </div>
+
+    <!-- Swipe area -->
+    <div class="swipe-area" id="swipe-area">
+      <div class="card-stack" id="card-stack"></div>
+
+      <div class="empty-state" id="empty-state" style="display:none;">
+        <div class="empty-emoji">✨</div>
+        <h2 class="empty-title">Bitti!</h2>
+        <p class="empty-desc">Tüm sunucuları gözden geçirdin.</p>
+        <div class="empty-results">
+          <div class="result-item result-left">
+            <span class="result-num" id="final-left">0</span>
+            <span class="result-label">Ayrılınacak</span>
+          </div>
+          <div class="result-divider"></div>
+          <div class="result-item result-right">
+            <span class="result-num" id="final-kept">0</span>
+            <span class="result-label">Kalınacak</span>
+          </div>
+        </div>
+        <button class="btn-login" id="btn-apply" style="margin-top: 24px;">
+          <span class="btn-text">Değişiklikleri Onayla ve Uygula</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Action buttons -->
+    <div class="actions" id="action-buttons">
+      <button class="act-btn act-leave" id="btn-leave" title="Sunucudan Ayrıl">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <button class="act-btn act-undo" id="btn-undo" title="Geri Al" disabled>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M3 10h10a5 5 0 0 1 0 10H9"/>
+          <polyline points="7 14 3 10 7 6"/>
+        </svg>
+      </button>
+      <button class="act-btn act-keep" id="btn-keep" title="Sunucuda Kal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <polyline points="20 6 9 17 4 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-track">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- Loading overlay -->
+  <div class="loading-overlay" id="loading-overlay" style="display:none;">
+    <div class="loading-inner">
+      <div class="loading-ring"></div>
+      <p class="loading-msg" id="loading-text">Sunucular yükleniyor...</p>
+    </div>
+  </div>
+
+  <!-- Confirm Modal -->
+  <div class="loading-overlay" id="confirm-modal" style="display:none; z-index: 2400;">
+    <div class="loading-inner" style="width: 280px; text-align: center; gap: 20px; background: var(--bg-primary); padding: 24px; border-radius: var(--r-md); border: 1px solid var(--frost-border); box-shadow: 0 16px 40px rgba(0,0,0,0.3);">
+      <div style="font-size: 32px;">⚠️</div>
+      <h3 style="color: var(--text-normal); font-size: 18px;">Onaylıyor musun?</h3>
+      <p style="color: var(--text-muted); font-size: 13px; line-height: 1.5;" id="confirm-desc"></p>
+      <div style="display: flex; gap: 12px; width: 100%; margin-top: 8px;">
+        <button class="btn-login" id="btn-confirm-cancel" style="flex: 1; background: var(--bg-tertiary); color: var(--text-normal);">İptal</button>
+        <button class="btn-login" id="btn-confirm-ok" style="flex: 1; background: var(--red);">Evet, Ayrıl</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Execution overlay -->
+  <div class="loading-overlay" id="execution-overlay" style="display:none; z-index: 2500;">
+    <div class="loading-inner" style="width: 240px;">
+      <div class="loading-ring" id="execution-ring"></div>
+      <p class="loading-msg" id="execution-text">İşlemler uygulanıyor...</p>
+      <div class="progress-track" style="margin-top: 16px; width: 100%; border-radius: 4px; overflow: hidden; background: rgba(255,255,255,0.1);">
+        <div class="progress-fill" id="execution-progress" style="background: var(--red); border-radius: 4px; width: 0%;"></div>
+      </div>
+      <p style="font-size: 11px; color: var(--text-faint); margin-top: 8px;" id="execution-status">0 / 0</p>
+      <button class="btn-login" id="btn-execution-done" style="margin-top: 16px; display: none; background: var(--green);">Tamam</button>
+    </div>
+  </div>
+
+  <!-- Toast container -->
+  <div class="toast-wrap" id="toast-container"></div>
+
+  <script src="discord.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
