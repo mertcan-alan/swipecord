@@ -1,4 +1,4 @@
-# Swipecord ⚡️
+# Swipecord
 
 <div align="center">
   <img src="assets/swipecord.gif" alt="Swipecord" width="120" height="120">
