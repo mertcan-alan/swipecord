@@ -1,7 +1,7 @@
 # Swipecord ⚡️
 
 <div align="center">
-  <video src="assets/swipecord.mp4" width="120" height="120" autoplay muted loop playsinline></video>
+  <video src="https://github.com/user-attachments/assets/35cb7a16-93a9-4508-a821-c36b2cbacac8" width="120" height="120" autoplay muted loop playsinline></video>
   <p><strong>Tinder-style swipe management for Discord servers.</strong></p>
   
   [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
